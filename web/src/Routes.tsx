@@ -8,6 +8,7 @@
 // 'src/pages/Admin/BooksPage/BooksPage.js' -> AdminBooksPage
 
 import { Set, Router, Route } from '@redwoodjs/router'
+import ShiftAssignmentsLayout from 'src/layouts/ShiftAssignmentsLayout'
 import ShiftsLayout from 'src/layouts/ShiftsLayout'
 import LocationsLayout from 'src/layouts/LocationsLayout'
 import WorksitesLayout from 'src/layouts/WorksitesLayout'
@@ -50,6 +51,12 @@ const Routes = () => {
           <Route path="/workers/{id:Int}/edit" page={WorkerEditWorkerPage} name="editWorker" />
           <Route path="/workers/{id:Int}" page={WorkerWorkerPage} name="worker" />
           <Route path="/workers" page={WorkerWorkersPage} name="workers" />
+        </Set>
+        <Set wrap={ShiftAssignmentsLayout}>
+          <Route path="/shift-assignments/new" page={ShiftAssignmentNewShiftAssignmentPage} name="newShiftAssignment" />
+          <Route path="/shift-assignments/{id:Int}/edit" page={ShiftAssignmentEditShiftAssignmentPage} name="editShiftAssignment" />
+          <Route path="/shift-assignments/{id:Int}" page={ShiftAssignmentShiftAssignmentPage} name="shiftAssignment" />
+          <Route path="/shift-assignments" page={ShiftAssignmentShiftAssignmentsPage} name="shiftAssignments" />
         </Set>
         <Route notfound page={NotFoundPage} />
       </Set>
