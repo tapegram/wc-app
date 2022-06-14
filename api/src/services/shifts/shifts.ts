@@ -40,4 +40,6 @@ export const deleteShift: MutationResolvers['deleteShift'] = ({ id }) => {
 export const Shift: ShiftResolvers = {
   location: (_obj, { root }) =>
     db.shift.findUnique({ where: { id: root.id } }).location(),
+  workers: (_obj, { root }) =>
+    db.shift.findUnique({ where: { id: root.id } }).workers(),
 }

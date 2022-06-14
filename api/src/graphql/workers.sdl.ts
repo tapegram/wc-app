@@ -9,6 +9,7 @@ export const schema = gql`
     address: Address
     jobType: String
     employmentStatus: String!
+    shifts: [ShiftAssignment]!
   }
 
   type Query {
