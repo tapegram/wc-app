@@ -9,6 +9,7 @@ export default async () => {
     //
     // Update "const data = []" to match your data model and seeding needs
     //
+
     const workSiteData: Prisma.WorksiteCreateArgs['data'][] = [
       { name: 'Dunder Mifflin' },
     ]
@@ -19,6 +20,7 @@ export default async () => {
         return record
       })
     )
+
     const locationData: Prisma.LocationCreateArgs['data'][] = [
       { name: 'Office', worksiteId: workSites[0].id },
       { name: 'Warehouse', worksiteId: workSites[0].id },
@@ -30,6 +32,7 @@ export default async () => {
         return record
       })
     )
+
     const shiftData: Prisma.ShiftCreateArgs['data'][] = [
       { name: 'Day', locationId: locations[1].id },
       { name: 'Night', locationId: locations[1].id },
@@ -42,17 +45,35 @@ export default async () => {
         return record
       })
     )
+
     const workerData: Prisma.WorkerCreateArgs['data'][] = [
       // To try this example data with the UserExample model in schema.prisma,
       // uncomment the lines below and run 'yarn rw prisma migrate dev'
       //
-      { firstName: 'alice', lastName: 'johnson', shiftId: shifts[0].id },
-      { firstName: 'mark', lastName: 'example', shiftId: shifts[1].id },
-      { firstName: 'jackie', lastName: 'jackson', shiftId: shifts[1].id },
-      { firstName: 'bob', lastName: 'bobson', shiftId: shifts[2].id },
+      { firstName: 'alice', lastName: 'johnson' },
+      { firstName: 'mark', lastName: 'example' },
+      { firstName: 'jackie', lastName: 'jackson' },
+      { firstName: 'bob', lastName: 'bobson' },
     ]
-    console.log(
-      "\nUsing the default './scripts/seed.{js,ts}' template\nEdit the file to add seed data\n"
+    const workers = await Promise.all(
+      workerData.map(async (data: Prisma.WorkerCreateArgs['data']) => {
+        const record = await db.worker.create({ data })
+        console.log(record)
+        return record
+      })
+    )
+
+    const shiftAssignmentData: Prisma.ShiftAssignmentCreateArgs['data'][] = [
+      { workerId: workers[0].id, shiftId: shifts[0].id },
+      { workerId: workers[1].id, shiftId: shifts[1].id },
+      { workerId: workers[2].id, shiftId: shifts[2].id },
+    ]
+    await Promise.all(
+      shiftAssignmentData.map(async (data: Prisma.ShiftAssignmentCreateArgs['data']) => {
+        const record = await db.shiftAssignment.create({ data })
+        console.log(record)
+        return record
+      })
     )
 
     // Note: if using PostgreSQL, using `createMany` to insert multiple records is much faster
@@ -61,10 +82,6 @@ export default async () => {
     //
     // Change to match your data model and seeding needs
     //
-    workerData.map(async (data: Prisma.WorkerCreateArgs['data']) => {
-      const record = await db.worker.create({ data })
-      console.log(record)
-    })
     // )
   } catch (error) {
     console.warn('Please define your seed data.')
