@@ -40,4 +40,6 @@ export const deleteWorker: MutationResolvers['deleteWorker'] = ({ id }) => {
 export const Worker: WorkerResolvers = {
   address: (_obj, { root }) =>
     db.worker.findUnique({ where: { id: root.id } }).address(),
+  shifts: (_obj, { root }) =>
+    db.worker.findUnique({ where: { id: root.id } }).shifts(),
 }

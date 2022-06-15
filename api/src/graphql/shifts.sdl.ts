@@ -4,6 +4,7 @@ export const schema = gql`
     name: String!
     locationId: Int!
     location: Location!
+    workers: [ShiftAssignment]!
   }
 
   type Query {
