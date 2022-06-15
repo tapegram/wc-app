@@ -23,7 +23,9 @@ const NewShift = () => {
   })
 
   const onSave = (input) => {
-    const castInput = Object.assign(input, { locationId: parseInt(input.locationId), })
+    const castInput = Object.assign(input, {
+      locationId: parseInt(input.locationId),
+    })
     createShift({ variables: { input: castInput } })
   }
 

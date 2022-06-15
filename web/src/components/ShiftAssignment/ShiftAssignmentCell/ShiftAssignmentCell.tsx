@@ -21,6 +21,8 @@ export const Failure = ({ error }: CellFailureProps) => (
   <div className="rw-cell-error">{error.message}</div>
 )
 
-export const Success = ({ shiftAssignment }: CellSuccessProps<FindShiftAssignmentById>) => {
+export const Success = ({
+  shiftAssignment,
+}: CellSuccessProps<FindShiftAssignmentById>) => {
   return <ShiftAssignment shiftAssignment={shiftAssignment} />
 }

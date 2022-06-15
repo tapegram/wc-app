@@ -12,15 +12,18 @@ const CREATE_ADDRESS_MUTATION = gql`
 `
 
 const NewAddress = () => {
-  const [createAddress, { loading, error }] = useMutation(CREATE_ADDRESS_MUTATION, {
-    onCompleted: () => {
-      toast.success('Address created')
-      navigate(routes.addresses())
-    },
-    onError: (error) => {
-      toast.error(error.message)
-    },
-  })
+  const [createAddress, { loading, error }] = useMutation(
+    CREATE_ADDRESS_MUTATION,
+    {
+      onCompleted: () => {
+        toast.success('Address created')
+        navigate(routes.addresses())
+      },
+      onError: (error) => {
+        toast.error(error.message)
+      },
+    }
+  )
 
   const onSave = (input) => {
     createAddress({ variables: { input } })

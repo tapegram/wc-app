@@ -46,18 +46,23 @@ const checkboxInputTag = (checked) => {
 }
 
 const ShiftAssignment = ({ shiftAssignment }) => {
-  const [deleteShiftAssignment] = useMutation(DELETE_SHIFT_ASSIGNMENT_MUTATION, {
-    onCompleted: () => {
-      toast.success('ShiftAssignment deleted')
-      navigate(routes.shiftAssignments())
-    },
-    onError: (error) => {
-      toast.error(error.message)
-    },
-  })
+  const [deleteShiftAssignment] = useMutation(
+    DELETE_SHIFT_ASSIGNMENT_MUTATION,
+    {
+      onCompleted: () => {
+        toast.success('ShiftAssignment deleted')
+        navigate(routes.shiftAssignments())
+      },
+      onError: (error) => {
+        toast.error(error.message)
+      },
+    }
+  )
 
   const onDeleteClick = (id) => {
-    if (confirm('Are you sure you want to delete shiftAssignment ' + id + '?')) {
+    if (
+      confirm('Are you sure you want to delete shiftAssignment ' + id + '?')
+    ) {
       deleteShiftAssignment({ variables: { id } })
     }
   }
@@ -66,17 +71,21 @@ const ShiftAssignment = ({ shiftAssignment }) => {
     <>
       <div className="rw-segment">
         <header className="rw-segment-header">
-          <h2 className="rw-heading rw-heading-secondary">ShiftAssignment {shiftAssignment.id} Detail</h2>
+          <h2 className="rw-heading rw-heading-secondary">
+            ShiftAssignment {shiftAssignment.id} Detail
+          </h2>
         </header>
         <table className="rw-table">
           <tbody>
             <tr>
               <th>Id</th>
               <td>{shiftAssignment.id}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>Worker id</th>
               <td>{shiftAssignment.workerId}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>Shift id</th>
               <td>{shiftAssignment.shiftId}</td>
             </tr>

@@ -7,18 +7,8 @@ import {
   Submit,
 } from '@redwoodjs/forms'
 
-
-
 const ShiftAssignmentForm = (props) => {
   const onSubmit = (data) => {
-
-  
-    
-    
-  
-    
-    
-  
     props.onSave(data, props?.shiftAssignment?.id)
   }
 
@@ -31,7 +21,7 @@ const ShiftAssignmentForm = (props) => {
           titleClassName="rw-form-error-title"
           listClassName="rw-form-error-list"
         />
-      
+
         <Label
           name="workerId"
           className="rw-label"
@@ -39,15 +29,14 @@ const ShiftAssignmentForm = (props) => {
         >
           Worker id
         </Label>
-        
-          <NumberField
-            name="workerId"
-            defaultValue={props.shiftAssignment?.workerId}
-            className="rw-input"
-            errorClassName="rw-input rw-input-error"
-            validation={{ required: true }}
-          />
-        
+
+        <NumberField
+          name="workerId"
+          defaultValue={props.shiftAssignment?.workerId}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+          validation={{ required: true }}
+        />
 
         <FieldError name="workerId" className="rw-field-error" />
 
@@ -58,23 +47,19 @@ const ShiftAssignmentForm = (props) => {
         >
           Shift id
         </Label>
-        
-          <NumberField
-            name="shiftId"
-            defaultValue={props.shiftAssignment?.shiftId}
-            className="rw-input"
-            errorClassName="rw-input rw-input-error"
-            validation={{ required: true }}
-          />
-        
+
+        <NumberField
+          name="shiftId"
+          defaultValue={props.shiftAssignment?.shiftId}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+          validation={{ required: true }}
+        />
 
         <FieldError name="shiftId" className="rw-field-error" />
 
         <div className="rw-button-group">
-          <Submit
-            disabled={props.loading}
-            className="rw-button rw-button-blue"
-          >
+          <Submit disabled={props.loading} className="rw-button rw-button-blue">
             Save
           </Submit>
         </div>

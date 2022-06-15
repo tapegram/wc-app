@@ -66,26 +66,33 @@ const Address = ({ address }) => {
     <>
       <div className="rw-segment">
         <header className="rw-segment-header">
-          <h2 className="rw-heading rw-heading-secondary">Address {address.id} Detail</h2>
+          <h2 className="rw-heading rw-heading-secondary">
+            Address {address.id} Detail
+          </h2>
         </header>
         <table className="rw-table">
           <tbody>
             <tr>
               <th>Id</th>
               <td>{address.id}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>First line</th>
               <td>{address.firstLine}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>Second line</th>
               <td>{address.secondLine}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>City</th>
               <td>{address.city}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>State</th>
               <td>{address.state}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>Postal</th>
               <td>{address.postal}</td>
             </tr>

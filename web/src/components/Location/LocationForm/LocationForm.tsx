@@ -8,18 +8,8 @@ import {
   Submit,
 } from '@redwoodjs/forms'
 
-
-
 const LocationForm = (props) => {
   const onSubmit = (data) => {
-
-  
-    
-    
-  
-    
-    
-  
     props.onSave(data, props?.location?.id)
   }
 
@@ -32,7 +22,7 @@ const LocationForm = (props) => {
           titleClassName="rw-form-error-title"
           listClassName="rw-form-error-list"
         />
-      
+
         <Label
           name="name"
           className="rw-label"
@@ -40,15 +30,14 @@ const LocationForm = (props) => {
         >
           Name
         </Label>
-        
-          <TextField
-            name="name"
-            defaultValue={props.location?.name}
-            className="rw-input"
-            errorClassName="rw-input rw-input-error"
-            validation={{ required: true }}
-          />
-        
+
+        <TextField
+          name="name"
+          defaultValue={props.location?.name}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+          validation={{ required: true }}
+        />
 
         <FieldError name="name" className="rw-field-error" />
 
@@ -59,23 +48,19 @@ const LocationForm = (props) => {
         >
           Worksite id
         </Label>
-        
-          <NumberField
-            name="worksiteId"
-            defaultValue={props.location?.worksiteId}
-            className="rw-input"
-            errorClassName="rw-input rw-input-error"
-            validation={{ required: true }}
-          />
-        
+
+        <NumberField
+          name="worksiteId"
+          defaultValue={props.location?.worksiteId}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+          validation={{ required: true }}
+        />
 
         <FieldError name="worksiteId" className="rw-field-error" />
 
         <div className="rw-button-group">
-          <Submit
-            disabled={props.loading}
-            className="rw-button rw-button-blue"
-          >
+          <Submit disabled={props.loading} className="rw-button rw-button-blue">
             Save
           </Submit>
         </div>

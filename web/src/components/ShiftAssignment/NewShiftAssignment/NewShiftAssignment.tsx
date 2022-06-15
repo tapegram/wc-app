@@ -12,18 +12,24 @@ const CREATE_SHIFT_ASSIGNMENT_MUTATION = gql`
 `
 
 const NewShiftAssignment = () => {
-  const [createShiftAssignment, { loading, error }] = useMutation(CREATE_SHIFT_ASSIGNMENT_MUTATION, {
-    onCompleted: () => {
-      toast.success('ShiftAssignment created')
-      navigate(routes.shiftAssignments())
-    },
-    onError: (error) => {
-      toast.error(error.message)
-    },
-  })
+  const [createShiftAssignment, { loading, error }] = useMutation(
+    CREATE_SHIFT_ASSIGNMENT_MUTATION,
+    {
+      onCompleted: () => {
+        toast.success('ShiftAssignment created')
+        navigate(routes.shiftAssignments())
+      },
+      onError: (error) => {
+        toast.error(error.message)
+      },
+    }
+  )
 
   const onSave = (input) => {
-    const castInput = Object.assign(input, { workerId: parseInt(input.workerId), shiftId: parseInt(input.shiftId), })
+    const castInput = Object.assign(input, {
+      workerId: parseInt(input.workerId),
+      shiftId: parseInt(input.shiftId),
+    })
     createShiftAssignment({ variables: { input: castInput } })
   }
 

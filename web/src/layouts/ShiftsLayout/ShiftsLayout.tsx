@@ -11,17 +11,11 @@ const ShiftsLayout = ({ children }: ShiftLayoutProps) => {
       <Toaster toastOptions={{ className: 'rw-toast', duration: 6000 }} />
       <header className="rw-header">
         <h1 className="rw-heading rw-heading-primary">
-          <Link
-            to={routes.shifts()}
-            className="rw-link"
-          >
+          <Link to={routes.shifts()} className="rw-link">
             Shifts
           </Link>
         </h1>
-        <Link
-          to={routes.newShift()}
-          className="rw-button rw-button-green"
-        >
+        <Link to={routes.newShift()} className="rw-button rw-button-green">
           <div className="rw-button-icon">+</div> New Shift
         </Link>
       </header>

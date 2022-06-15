@@ -7,27 +7,8 @@ import {
   Submit,
 } from '@redwoodjs/forms'
 
-
-
 const AddressForm = (props) => {
   const onSubmit = (data) => {
-
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
     props.onSave(data, props?.address?.id)
   }
 
@@ -40,7 +21,7 @@ const AddressForm = (props) => {
           titleClassName="rw-form-error-title"
           listClassName="rw-form-error-list"
         />
-      
+
         <Label
           name="firstLine"
           className="rw-label"
@@ -48,15 +29,14 @@ const AddressForm = (props) => {
         >
           First line
         </Label>
-        
-          <TextField
-            name="firstLine"
-            defaultValue={props.address?.firstLine}
-            className="rw-input"
-            errorClassName="rw-input rw-input-error"
-            validation={{ required: true }}
-          />
-        
+
+        <TextField
+          name="firstLine"
+          defaultValue={props.address?.firstLine}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+          validation={{ required: true }}
+        />
 
         <FieldError name="firstLine" className="rw-field-error" />
 
@@ -67,14 +47,13 @@ const AddressForm = (props) => {
         >
           Second line
         </Label>
-        
-          <TextField
-            name="secondLine"
-            defaultValue={props.address?.secondLine}
-            className="rw-input"
-            errorClassName="rw-input rw-input-error"
-          />
-        
+
+        <TextField
+          name="secondLine"
+          defaultValue={props.address?.secondLine}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+        />
 
         <FieldError name="secondLine" className="rw-field-error" />
 
@@ -85,15 +64,14 @@ const AddressForm = (props) => {
         >
           City
         </Label>
-        
-          <TextField
-            name="city"
-            defaultValue={props.address?.city}
-            className="rw-input"
-            errorClassName="rw-input rw-input-error"
-            validation={{ required: true }}
-          />
-        
+
+        <TextField
+          name="city"
+          defaultValue={props.address?.city}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+          validation={{ required: true }}
+        />
 
         <FieldError name="city" className="rw-field-error" />
 
@@ -104,15 +82,14 @@ const AddressForm = (props) => {
         >
           State
         </Label>
-        
-          <TextField
-            name="state"
-            defaultValue={props.address?.state}
-            className="rw-input"
-            errorClassName="rw-input rw-input-error"
-            validation={{ required: true }}
-          />
-        
+
+        <TextField
+          name="state"
+          defaultValue={props.address?.state}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+          validation={{ required: true }}
+        />
 
         <FieldError name="state" className="rw-field-error" />
 
@@ -123,23 +100,19 @@ const AddressForm = (props) => {
         >
           Postal
         </Label>
-        
-          <TextField
-            name="postal"
-            defaultValue={props.address?.postal}
-            className="rw-input"
-            errorClassName="rw-input rw-input-error"
-            validation={{ required: true }}
-          />
-        
+
+        <TextField
+          name="postal"
+          defaultValue={props.address?.postal}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+          validation={{ required: true }}
+        />
 
         <FieldError name="postal" className="rw-field-error" />
 
         <div className="rw-button-group">
-          <Submit
-            disabled={props.loading}
-            className="rw-button rw-button-blue"
-          >
+          <Submit disabled={props.loading} className="rw-button rw-button-blue">
             Save
           </Submit>
         </div>

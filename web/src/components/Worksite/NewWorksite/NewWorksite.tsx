@@ -12,15 +12,18 @@ const CREATE_WORKSITE_MUTATION = gql`
 `
 
 const NewWorksite = () => {
-  const [createWorksite, { loading, error }] = useMutation(CREATE_WORKSITE_MUTATION, {
-    onCompleted: () => {
-      toast.success('Worksite created')
-      navigate(routes.worksites())
-    },
-    onError: (error) => {
-      toast.error(error.message)
-    },
-  })
+  const [createWorksite, { loading, error }] = useMutation(
+    CREATE_WORKSITE_MUTATION,
+    {
+      onCompleted: () => {
+        toast.success('Worksite created')
+        navigate(routes.worksites())
+      },
+      onError: (error) => {
+        toast.error(error.message)
+      },
+    }
+  )
 
   const onSave = (input) => {
     createWorksite({ variables: { input } })

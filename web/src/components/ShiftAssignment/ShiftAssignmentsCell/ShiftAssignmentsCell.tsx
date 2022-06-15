@@ -21,10 +21,7 @@ export const Empty = () => {
   return (
     <div className="rw-text-center">
       {'No shiftAssignments yet. '}
-      <Link
-        to={routes.newShiftAssignment()}
-        className="rw-link"
-      >
+      <Link to={routes.newShiftAssignment()} className="rw-link">
         {'Create one?'}
       </Link>
     </div>
@@ -35,6 +32,8 @@ export const Failure = ({ error }: CellFailureProps) => (
   <div className="rw-cell-error">{error.message}</div>
 )
 
-export const Success = ({ shiftAssignments }: CellSuccessProps<FindShiftAssignments>) => {
+export const Success = ({
+  shiftAssignments,
+}: CellSuccessProps<FindShiftAssignments>) => {
   return <ShiftAssignments shiftAssignments={shiftAssignments} />
 }

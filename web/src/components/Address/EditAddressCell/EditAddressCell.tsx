@@ -39,15 +39,18 @@ export const Failure = ({ error }: CellFailureProps) => (
 )
 
 export const Success = ({ address }: CellSuccessProps<EditAddressById>) => {
-  const [updateAddress, { loading, error }] = useMutation(UPDATE_ADDRESS_MUTATION, {
-    onCompleted: () => {
-      toast.success('Address updated')
-      navigate(routes.addresses())
-    },
-    onError: (error) => {
-      toast.error(error.message)
-    },
-  })
+  const [updateAddress, { loading, error }] = useMutation(
+    UPDATE_ADDRESS_MUTATION,
+    {
+      onCompleted: () => {
+        toast.success('Address updated')
+        navigate(routes.addresses())
+      },
+      onError: (error) => {
+        toast.error(error.message)
+      },
+    }
+  )
 
   const onSave = (input, id) => {
     updateAddress({ variables: { id, input } })
@@ -56,10 +59,17 @@ export const Success = ({ address }: CellSuccessProps<EditAddressById>) => {
   return (
     <div className="rw-segment">
       <header className="rw-segment-header">
-        <h2 className="rw-heading rw-heading-secondary">Edit Address {address.id}</h2>
+        <h2 className="rw-heading rw-heading-secondary">
+          Edit Address {address.id}
+        </h2>
       </header>
       <div className="rw-segment-main">
-        <AddressForm address={address} onSave={onSave} error={error} loading={loading} />
+        <AddressForm
+          address={address}
+          onSave={onSave}
+          error={error}
+          loading={loading}
+        />
       </div>
     </div>
   )

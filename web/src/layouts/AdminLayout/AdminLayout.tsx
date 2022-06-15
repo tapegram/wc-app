@@ -24,7 +24,9 @@ const AdminLayout = ({ children }: AdminLayoutProps) => {
               <Link to={routes.newWorksite()}>Add a Worksite</Link>
             </li>
             <li>
-              <Link to={routes.newShiftAssignment()}>Add a Shift Assignment</Link>
+              <Link to={routes.newShiftAssignment()}>
+                Add a Shift Assignment
+              </Link>
             </li>
           </ul>
         </nav>

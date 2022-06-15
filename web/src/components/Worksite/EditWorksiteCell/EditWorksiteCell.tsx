@@ -31,15 +31,18 @@ export const Failure = ({ error }: CellFailureProps) => (
 )
 
 export const Success = ({ worksite }: CellSuccessProps<EditWorksiteById>) => {
-  const [updateWorksite, { loading, error }] = useMutation(UPDATE_WORKSITE_MUTATION, {
-    onCompleted: () => {
-      toast.success('Worksite updated')
-      navigate(routes.worksites())
-    },
-    onError: (error) => {
-      toast.error(error.message)
-    },
-  })
+  const [updateWorksite, { loading, error }] = useMutation(
+    UPDATE_WORKSITE_MUTATION,
+    {
+      onCompleted: () => {
+        toast.success('Worksite updated')
+        navigate(routes.worksites())
+      },
+      onError: (error) => {
+        toast.error(error.message)
+      },
+    }
+  )
 
   const onSave = (input, id) => {
     updateWorksite({ variables: { id, input } })
@@ -48,10 +51,17 @@ export const Success = ({ worksite }: CellSuccessProps<EditWorksiteById>) => {
   return (
     <div className="rw-segment">
       <header className="rw-segment-header">
-        <h2 className="rw-heading rw-heading-secondary">Edit Worksite {worksite.id}</h2>
+        <h2 className="rw-heading rw-heading-secondary">
+          Edit Worksite {worksite.id}
+        </h2>
       </header>
       <div className="rw-segment-main">
-        <WorksiteForm worksite={worksite} onSave={onSave} error={error} loading={loading} />
+        <WorksiteForm
+          worksite={worksite}
+          onSave={onSave}
+          error={error}
+          loading={loading}
+        />
       </div>
     </div>
   )

@@ -44,17 +44,26 @@ export const Success = ({ shift }: CellSuccessProps<EditShiftById>) => {
   })
 
   const onSave = (input, id) => {
-    const castInput = Object.assign(input, { locationId: parseInt(input.locationId), })
+    const castInput = Object.assign(input, {
+      locationId: parseInt(input.locationId),
+    })
     updateShift({ variables: { id, input: castInput } })
   }
 
   return (
     <div className="rw-segment">
       <header className="rw-segment-header">
-        <h2 className="rw-heading rw-heading-secondary">Edit Shift {shift.id}</h2>
+        <h2 className="rw-heading rw-heading-secondary">
+          Edit Shift {shift.id}
+        </h2>
       </header>
       <div className="rw-segment-main">
-        <ShiftForm shift={shift} onSave={onSave} error={error} loading={loading} />
+        <ShiftForm
+          shift={shift}
+          onSave={onSave}
+          error={error}
+          loading={loading}
+        />
       </div>
     </div>
   )

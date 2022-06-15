@@ -54,22 +54,27 @@ const checkboxInputTag = (checked) => {
 }
 
 const ShiftAssignmentsList = ({ shiftAssignments }) => {
-  const [deleteShiftAssignment] = useMutation(DELETE_SHIFT_ASSIGNMENT_MUTATION, {
-    onCompleted: () => {
-      toast.success('ShiftAssignment deleted')
-    },
-    onError: (error) => {
-      toast.error(error.message)
-    },
-    // This refetches the query on the list page. Read more about other ways to
-    // update the cache over here:
-    // https://www.apollographql.com/docs/react/data/mutations/#making-all-other-cache-updates
-    refetchQueries: [{ query: QUERY }],
-    awaitRefetchQueries: true,
-  })
+  const [deleteShiftAssignment] = useMutation(
+    DELETE_SHIFT_ASSIGNMENT_MUTATION,
+    {
+      onCompleted: () => {
+        toast.success('ShiftAssignment deleted')
+      },
+      onError: (error) => {
+        toast.error(error.message)
+      },
+      // This refetches the query on the list page. Read more about other ways to
+      // update the cache over here:
+      // https://www.apollographql.com/docs/react/data/mutations/#making-all-other-cache-updates
+      refetchQueries: [{ query: QUERY }],
+      awaitRefetchQueries: true,
+    }
+  )
 
   const onDeleteClick = (id) => {
-    if (confirm('Are you sure you want to delete shiftAssignment ' + id + '?')) {
+    if (
+      confirm('Are you sure you want to delete shiftAssignment ' + id + '?')
+    ) {
       deleteShiftAssignment({ variables: { id } })
     }
   }
@@ -95,7 +100,9 @@ const ShiftAssignmentsList = ({ shiftAssignments }) => {
                 <nav className="rw-table-actions">
                   <Link
                     to={routes.shiftAssignment({ id: shiftAssignment.id })}
-                    title={'Show shiftAssignment ' + shiftAssignment.id + ' detail'}
+                    title={
+                      'Show shiftAssignment ' + shiftAssignment.id + ' detail'
+                    }
                     className="rw-button rw-button-small"
                   >
                     Show

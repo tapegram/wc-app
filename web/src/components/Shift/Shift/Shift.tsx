@@ -66,17 +66,21 @@ const Shift = ({ shift }) => {
     <>
       <div className="rw-segment">
         <header className="rw-segment-header">
-          <h2 className="rw-heading rw-heading-secondary">Shift {shift.id} Detail</h2>
+          <h2 className="rw-heading rw-heading-secondary">
+            Shift {shift.id} Detail
+          </h2>
         </header>
         <table className="rw-table">
           <tbody>
             <tr>
               <th>Id</th>
               <td>{shift.id}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>Name</th>
               <td>{shift.name}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>Location id</th>
               <td>{shift.locationId}</td>
             </tr>

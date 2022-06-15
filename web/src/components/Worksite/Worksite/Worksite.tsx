@@ -66,14 +66,17 @@ const Worksite = ({ worksite }) => {
     <>
       <div className="rw-segment">
         <header className="rw-segment-header">
-          <h2 className="rw-heading rw-heading-secondary">Worksite {worksite.id} Detail</h2>
+          <h2 className="rw-heading rw-heading-secondary">
+            Worksite {worksite.id} Detail
+          </h2>
         </header>
         <table className="rw-table">
           <tbody>
             <tr>
               <th>Id</th>
               <td>{worksite.id}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>Name</th>
               <td>{worksite.name}</td>
             </tr>

@@ -8,18 +8,8 @@ import {
   Submit,
 } from '@redwoodjs/forms'
 
-
-
 const ShiftForm = (props) => {
   const onSubmit = (data) => {
-
-  
-    
-    
-  
-    
-    
-  
     props.onSave(data, props?.shift?.id)
   }
 
@@ -32,7 +22,7 @@ const ShiftForm = (props) => {
           titleClassName="rw-form-error-title"
           listClassName="rw-form-error-list"
         />
-      
+
         <Label
           name="name"
           className="rw-label"
@@ -40,15 +30,14 @@ const ShiftForm = (props) => {
         >
           Name
         </Label>
-        
-          <TextField
-            name="name"
-            defaultValue={props.shift?.name}
-            className="rw-input"
-            errorClassName="rw-input rw-input-error"
-            validation={{ required: true }}
-          />
-        
+
+        <TextField
+          name="name"
+          defaultValue={props.shift?.name}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+          validation={{ required: true }}
+        />
 
         <FieldError name="name" className="rw-field-error" />
 
@@ -59,23 +48,19 @@ const ShiftForm = (props) => {
         >
           Location id
         </Label>
-        
-          <NumberField
-            name="locationId"
-            defaultValue={props.shift?.locationId}
-            className="rw-input"
-            errorClassName="rw-input rw-input-error"
-            validation={{ required: true }}
-          />
-        
+
+        <NumberField
+          name="locationId"
+          defaultValue={props.shift?.locationId}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+          validation={{ required: true }}
+        />
 
         <FieldError name="locationId" className="rw-field-error" />
 
         <div className="rw-button-group">
-          <Submit
-            disabled={props.loading}
-            className="rw-button rw-button-blue"
-          >
+          <Submit disabled={props.loading} className="rw-button rw-button-blue">
             Save
           </Submit>
         </div>
