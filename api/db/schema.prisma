@@ -19,15 +19,15 @@ generator client {
 
 // What about days off?
 model Worker {
-  id               Int      @id @default(autoincrement())
+  id               Int               @id @default(autoincrement())
   firstName        String
   lastName         String
   phone            String?
   email            String?
-  addressId        Int?     @unique
-  address          Address? @relation(fields: [addressId], references: [id])
+  addressId        Int?              @unique
+  address          Address?          @relation(fields: [addressId], references: [id])
   jobType          String? //think about making flexible
-  employmentStatus String   @default("active") //change to bool, int maybe later
+  employmentStatus String            @default("active") //change to bool, int maybe later
   shifts           ShiftAssignment[]
 }
 
@@ -46,19 +46,19 @@ model Location {
 }
 
 model Shift {
-  id         Int      @id @default(autoincrement())
+  id         Int               @id @default(autoincrement())
   name       String
   locationId Int
-  location   Location @relation(fields: [locationId], references: [id])
+  location   Location          @relation(fields: [locationId], references: [id])
   workers    ShiftAssignment[]
 }
 
 model ShiftAssignment {
-  id         Int     @id @default(autoincrement())
-  workerId   Int
-  worker     Worker  @relation(fields: [workerId], references: [id])
-  shiftId    Int
-  shift      Shift   @relation(fields: [shiftId], references: [id])
+  id       Int    @id @default(autoincrement())
+  workerId Int
+  worker   Worker @relation(fields: [workerId], references: [id])
+  shiftId  Int
+  shift    Shift  @relation(fields: [shiftId], references: [id])
 
   @@unique([workerId, shiftId])
 }

@@ -1,5 +1,6 @@
 import { MetaTags } from '@redwoodjs/web'
 import WallchartComponent from 'src/components/WallchartComponent'
+import WallChartCell from 'src/components/WallchartCell'
 
 const HomePage = () => {
   const hardCodedData = {
@@ -41,9 +42,9 @@ const HomePage = () => {
 
   return (
     <>
+      <WallChartCell id={1}></WallChartCell>
       <WallchartComponent shifts={hardCodedData.shifts} />
       <MetaTags title="Home" description="Home page" />
-      Home
     </>
   )
 }
