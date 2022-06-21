@@ -58,8 +58,13 @@ export const Success = ({
   wallChart,
 }: CellSuccessProps<FindWallChartQuery, FindWallChartQueryVariables>) => {
   return (
+    // <div>{JSON.stringify(wallChart)}</div>
+    // <div>{console.log(wallChart)}</div>
     <div>
-      <WallchartComponent locations={wallChart.locations} />
+      <WallchartComponent
+        name={wallChart.name}
+        locations={wallChart.locations}
+      />
     </div>
   )
 }

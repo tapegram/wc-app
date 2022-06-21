@@ -1,6 +1,6 @@
 .styled-table {
   border-collapse: collapse;
-  color: black;
+
   margin: 25px 0;
   font-size: 0.9em;
   font-family: sans-serif;
@@ -10,9 +10,17 @@
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
-.styled-table thead tr {
+
+.styled-table > caption {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: inherit;
+  font-size: 1.5em;
+}
+
+
+.styled-table thead th {
   background-color: #48bb78;
-  /* color: #ffffff; */
+  color: #ffffff;
   text-align: left;
   border: 2px solid #48bb78;
 }
@@ -45,11 +53,11 @@
   border-bottom: 2px solid #48bb78;
 }
 
-.styled-table > thead > tr > th:hover,
+.styled-table > thead > th:hover,
 .styled-table > tbody > tr:hover {
   font-weight: bold;
   background-color: #555;
-  /* color: white; */
+  color: white;
 }
 
 .navbar {
