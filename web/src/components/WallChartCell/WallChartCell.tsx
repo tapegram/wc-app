@@ -11,40 +11,38 @@ import WallchartComponent, {
 
 export const QUERY = gql`
   query FindWallChartQuery($id: Int!) {
-    {
-  worksite(id: $id) {
-    name
-    locations {
-      id
+    wallChart: worksite(id: $id) {
       name
-      shifts {
+      locations {
         id
         name
-        location {
+        shifts {
           id
           name
-        }
-        workers {
-          worker {
+          location {
             id
-            firstName
-            lastName
+            name
+          }
+          workers {
+            worker {
+              id
+              firstName
+              lastName
+            }
           }
         }
       }
     }
   }
-}
-  }
 `
 
-const toProps = (worksite: Worksite): Props => ({
-  shifts: worksite.locations.map((location) => {
-    return location.shifts.map((shift) => {
-      return shift
-    })
-  }),
-})
+// const toProps = (worksite: Worksite): Props => ({
+//   shifts: worksite.locations.map((location) => {
+//     return location.shifts.map((shift) => {
+//       return shift
+//     })
+//   }),
+// })
 
 export const Loading = () => <div>Loading...</div>
 
@@ -61,7 +59,7 @@ export const Success = ({
 }: CellSuccessProps<FindWallChartQuery, FindWallChartQueryVariables>) => {
   return (
     <div>
-      <WallchartComponent shifts={hardCodedData.shifts} />
+      <WallchartComponent locations={wallChart.locations} />
     </div>
   )
 }

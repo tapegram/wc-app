@@ -1,6 +1,6 @@
 .styled-table {
   border-collapse: collapse;
-
+  color: black;
   margin: 25px 0;
   font-size: 0.9em;
   font-family: sans-serif;
@@ -12,7 +12,7 @@
 
 .styled-table thead tr {
   background-color: #48bb78;
-  color: #ffffff;
+  /* color: #ffffff; */
   text-align: left;
   border: 2px solid #48bb78;
 }
@@ -49,7 +49,7 @@
 .styled-table > tbody > tr:hover {
   font-weight: bold;
   background-color: #555;
-  color: white;
+  /* color: white; */
 }
 
 .navbar {

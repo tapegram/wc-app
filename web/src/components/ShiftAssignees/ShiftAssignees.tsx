@@ -2,13 +2,15 @@ type Props = {
   workers: Worker[]
 }
 type Worker = {
-  name: string
+  id: number
+  firstName: string
+  lastName: string
 }
 const ShiftAssignees = (props: Props) => {
   return (
     <table>
       {props.workers.map((worker) => {
-        return <tr>{worker.name}</tr>
+        return <tr>{worker.firstName}</tr>
       })}
     </table>
   )

@@ -43,7 +43,7 @@ const HomePage = () => {
   return (
     <>
       <WallChartCell id={1}></WallChartCell>
-      <WallchartComponent shifts={hardCodedData.shifts} />
+      {/* <WallchartComponent shifts={hardCodedData.shifts} /> */}
       <MetaTags title="Home" description="Home page" />
     </>
   )

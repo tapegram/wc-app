@@ -1,29 +1,54 @@
 import ShiftAssignees from 'src/components/ShiftAssignees/ShiftAssignees'
+
 export type Props = {
-  shifts: Shift[]
-}
-type Shift = {
-  displayName: string
-  time: string
   locations: Location[]
 }
 type Location = {
-  displayName: string
+  id: number
+  name: string
+  shifts: Shift[]
+}
+type Shift = {
+  id: number
+  name: string
+  location: Location
   workers: Worker[]
 }
 type Worker = {
-  name: string
+  id: number
+  firstName: string
+  lastName: string
 }
 
 const WallchartComponent = (props: Props) => {
   return (
     <div>
       <h2>{'Wallchart Component:'}</h2>
-      {/* <p>
-        {
-          'Find me in ./web/src/components/WallchartComponent/WallchartComponent.tsx'
-        }
-      </p> */}
+      <table className="styled-table">
+        <thead>
+          <th></th>
+          {props.locations.map((loc) => (
+            <th>{loc.name}</th>
+          ))}
+        </thead>
+        <tbody>
+          {props.locations.map((loc) =>
+            loc.shifts.map((shift) => (
+              <tr>
+                <td>{shift.name}</td>
+                {/* {shift.location.map((loc) => (
+                  <td>
+                    <ShiftAssignees workers={loc.workers} />
+                  </td>
+                ))} */}
+              </tr>
+            ))
+          )}
+        </tbody>
+      </table>
+
+      {/* <h2>{'Wallchart Component:'}</h2>
+
       <table className="styled-table">
         <thead>
           <tr>
@@ -45,9 +70,13 @@ const WallchartComponent = (props: Props) => {
             </tr>
           ))}
         </tbody>
-      </table>
+      </table> */}
     </div>
   )
 }
 
 export default WallchartComponent
+
+// {props.locations.map((loc) => {
+//   return loc.shifts.map((shift) => <th>{shift.name}</th>)
+// })}
