@@ -72,36 +72,49 @@ type Worker = {
 
 const WallchartComponent = (props: Props) => {
   return (
-    <table className="styled-table">
-      <caption>
-        Name of the worksite:
-        <span style={{ fontWeight: 'bold' }}>
-          {' ' + JSON.stringify(props.name).replaceAll('"', '')}
-        </span>
-      </caption>
+    <div>
+      <div>
+        {console.log(
+          'Hello' +
+            JSON.stringify(props.locations[0].shifts[0].name).replaceAll(
+              '"',
+              ''
+            )
+        )}
+      </div>
+      <table className="styled-table">
+        <caption>
+          Name of the worksite:
+          <span style={{ fontWeight: 'bold' }}>
+            {' ' + JSON.stringify(props.name).replaceAll('"', '')}
+          </span>
+        </caption>
 
-      <thead>
-        {/* do the shift types hardcoded because I couldnt figure out how to automatically do it,
+        <thead>
+          {/* do the shift types hardcoded because I couldnt figure out how to automatically do it,
           with shifts(distinct) from graphql or something*/}
-        <th></th>
-        <th>Day</th>
-        <th>Night</th>
-      </thead>
-      <tbody>
-        {/* the rows are going to be the locations*/}
-        {props.locations.map((loc) => (
-          <tr>
-            <td>{loc.name}</td>
-            {loc.shifts.map((shift) => (
-              <td>
-                {console.log(shift.workers)}
-                <ShiftAssignees workers={shift.workers} />
-              </td>
-            ))}
-          </tr>
-        ))}
-      </tbody>
-    </table>
+          <th></th>
+          <th>Day</th>
+          <th>Night</th>
+        </thead>
+        <tbody>
+          {/* the rows are going to be the locations*/}
+          {props.locations.map((loc) => (
+            <tr>
+              <td>{loc.name}</td>
+              {JSON.stringify(loc.shifts[0].name).replaceAll('"', '') ==
+                'Night' && <td></td>}
+              {loc.shifts.map((shift) => (
+                <td>
+                  {console.log(shift.workers)}
+                  <ShiftAssignees workers={shift.workers} />
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
 
     // <div>
     //   <h2>{'Wallchart Component:'}</h2>
