@@ -62,11 +62,26 @@ export const Success = ({
       <WallchartComponent
         name={wallChart.name}
         locations={toLocationsProps(wallChart.locations)}
-        shiftNames={["Day", "Night"]}
+        shiftNames={getUniqueShiftNames(wallChart.locations)}
       />
     </div>
   )
 }
+
+const getUniqueShiftNames = (locations: Location[]): string[] =>
+  /*
+    This could be broken out more into smaller more readable functions, but it basically:
+    1) gets all the shift names from each location
+    2) flattens the list from string[][] -> string[]
+    3) dedups shift names by sticking them into a set
+  */
+  [...new Set(
+    locations.map(
+      (location) => location.shifts.map(
+        (shift) => shift.name
+      )
+    ).flat()
+  )]
 
 const toLocationsProps = (locations: Location[]): PLocation[] =>
   locations.map(toLocationProp)
