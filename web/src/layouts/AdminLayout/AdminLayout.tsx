@@ -8,10 +8,9 @@ type AdminLayoutProps = {
 const AdminLayout = ({ children }: AdminLayoutProps) => {
   return (
     <>
-      <div>
-        {/* Here we put the navbar component from components/navbar/navbar */}
-        <Navbar />
-        {/* <DropDownMenu
+      {/* Here we put the navbar component from components/navbar/navbar */}
+      <Navbar />
+      {/* <DropDownMenu
           items={[
             { label: 'Add a worker', link: routes.newWorker() },
             { label: 'Add a Location', link: routes.newLocation() },
@@ -23,9 +22,9 @@ const AdminLayout = ({ children }: AdminLayoutProps) => {
             },
           ]}
         /> */}
-        {/* And the children */}
-        <main>{children}</main>
-        {/* <header>
+      {/* And the children */}
+      <main>{children}</main>
+      {/* <header>
           <h1 className="header">
             <Link to={routes.home()}>Redwood WC App</Link>
           </h1>
@@ -54,7 +53,6 @@ const AdminLayout = ({ children }: AdminLayoutProps) => {
             </ul>
           </nav>
         </header> */}
-      </div>
     </>
   )
 }

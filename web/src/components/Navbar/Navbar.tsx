@@ -17,16 +17,16 @@ const Navbar = () => {
   }, [width])
 
   return (
-    <div>
-      <nav className="bg-white dark:bg-gray-800  ">
-        <div className="max-w-7xl mx-auto px-8 ml-1">
+    <>
+      <nav className="bg-white dark:bg-gray-800 sticky top-0 z-50 bg-gradient-to-r from-green-900 to-slate-900  ...">
+        <div className="max-w-7xl mx-auto pl-2 pr-8 ml-0">
           <div className="flex items-center justify-between h-16">
             <div className=" flex items-center md">
               <Link
                 to={routes.home()}
-                className="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                className="text-gray-100  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-xl font-medium "
               >
-                Redwood WC App
+                WC App
               </Link>
               {/* <a className="flex-shrink-0 h-1" href="/">
                 <img
@@ -38,34 +38,40 @@ const Navbar = () => {
               <div className="hidden md:block">
                 <div className="ml-10 flex items-baseline space-x-4">
                   <Link
-                    to={routes.newWorker()}
-                    className="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                    to={routes.home()}
+                    className="text-gray-100  hover:text-gray-800 dark:hover:text-white dark:hover:text-lg px-3 py-2 rounded-md text-sm font-medium"
                   >
-                    New Worker
+                    View WallChart
+                  </Link>
+                  <Link
+                    to={routes.newWorker()}
+                    className="text-gray-100  hover:text-gray-800 dark:hover:text-white dark:hover:text-lg px-3 py-2 rounded-md text-sm font-medium"
+                  >
+                    Add new Worker
                   </Link>
                   <Link
                     to={routes.newLocation()}
-                    className="text-gray-800 dark:text-white  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                    className="text-gray-100  hover:text-gray-800 dark:hover:text-white dark:hover:text-lg px-3 py-2 rounded-md text-sm font-medium"
                   >
-                    New Location
+                    Add new Location
                   </Link>
                   <Link
                     to={routes.newShift()}
-                    className="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                    className="text-gray-100  hover:text-gray-800 dark:hover:text-white dark:hover:text-lg px-3 py-2 rounded-md text-sm font-medium"
                   >
-                    New Shift
+                    Add new Shift
                   </Link>
                   <Link
                     to={routes.newWorksite()}
-                    className="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                    className="text-gray-100  hover:text-gray-800 dark:hover:text-white dark:hover:text-lg px-3 py-2 rounded-md text-sm font-medium"
                   >
-                    New Worksite
+                    Add new Worksite
                   </Link>
                   <Link
                     to={routes.newShiftAssignment()}
-                    className="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                    className="text-gray-100  hover:text-gray-800 dark:hover:text-white dark:hover:text-lg px-3 py-2 rounded-md text-sm font-medium"
                   >
-                    New Shift Assignment
+                    Add new Shift Assignment
                   </Link>
                 </div>
               </div>
@@ -75,7 +81,7 @@ const Navbar = () => {
             </div>
             <div className="-mr-2 flex md:hidden">
               <button
-                className="text-gray-800 dark:text-white hover:text-gray-300 inline-flex items-center justify-center p-2 rounded-md focus:outline-none"
+                className="text-gray-800 dark:text-white hover:text-gray-100 inline-flex items-center justify-center p-2 rounded-md focus:outline-none"
                 onClick={() => setIsOpen(!isOpen)}
               >
                 <svg
@@ -96,41 +102,47 @@ const Navbar = () => {
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
               <Link
-                to={routes.newWorker()}
-                className="text-gray-300  hover:text-gray-800 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                to={routes.home()}
+                className="text-gray-100  hover:text-gray-800 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium"
               >
-                New Worker
+                View Wallchart
+              </Link>
+              <Link
+                to={routes.newWorker()}
+                className="text-gray-100  hover:text-gray-800 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+              >
+                Add new Worker
               </Link>
               <Link
                 to={routes.newLocation()}
-                className="text-gray-800 dark:text-white block px-3 py-2 rounded-md text-base font-medium"
+                className="text-gray-100 hover:text-gray-800 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium"
               >
-                New Location
+                Add new Location
               </Link>
               <Link
                 to={routes.newShift()}
-                className="text-gray-300 hover:text-gray-800 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                className="text-gray-100 hover:text-gray-800 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium"
               >
-                New Shift
+                Add new Shift
               </Link>
 
               <Link
                 to={routes.newWorksite()}
-                className="text-gray-300 hover:text-gray-800 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                className="text-gray-100 hover:text-gray-800 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium"
               >
-                New Worksite
+                Add new Worksite
               </Link>
               <Link
                 to={routes.newShiftAssignment()}
-                className="text-gray-300 hover:text-gray-800 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                className="text-gray-100 hover:text-gray-800 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium"
               >
-                New Shift Assignment
+                Add new Shift Assignment
               </Link>
             </div>
           </div>
         )}
       </nav>
-    </div>
+    </>
   )
 }
 
