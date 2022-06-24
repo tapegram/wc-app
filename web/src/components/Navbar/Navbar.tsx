@@ -39,37 +39,37 @@ const Navbar = () => {
                 <div className="ml-10 flex items-baseline space-x-4">
                   <Link
                     to={routes.home()}
-                    className="text-gray-100  hover:text-gray-800 dark:hover:text-white dark:hover:text-lg px-3 py-2 rounded-md text-sm font-medium"
+                    className="text-gray-100  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                   >
                     View WallChart
                   </Link>
                   <Link
                     to={routes.newWorker()}
-                    className="text-gray-100  hover:text-gray-800 dark:hover:text-white dark:hover:text-lg px-3 py-2 rounded-md text-sm font-medium"
+                    className="text-gray-100  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                   >
                     Add new Worker
                   </Link>
                   <Link
                     to={routes.newLocation()}
-                    className="text-gray-100  hover:text-gray-800 dark:hover:text-white dark:hover:text-lg px-3 py-2 rounded-md text-sm font-medium"
+                    className="text-gray-100  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                   >
                     Add new Location
                   </Link>
                   <Link
                     to={routes.newShift()}
-                    className="text-gray-100  hover:text-gray-800 dark:hover:text-white dark:hover:text-lg px-3 py-2 rounded-md text-sm font-medium"
+                    className="text-gray-100  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                   >
                     Add new Shift
                   </Link>
                   <Link
                     to={routes.newWorksite()}
-                    className="text-gray-100  hover:text-gray-800 dark:hover:text-white dark:hover:text-lg px-3 py-2 rounded-md text-sm font-medium"
+                    className="text-gray-100  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                   >
                     Add new Worksite
                   </Link>
                   <Link
                     to={routes.newShiftAssignment()}
-                    className="text-gray-100  hover:text-gray-800 dark:hover:text-white dark:hover:text-lg px-3 py-2 rounded-md text-sm font-medium"
+                    className="text-gray-100  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                   >
                     Add new Shift Assignment
                   </Link>
