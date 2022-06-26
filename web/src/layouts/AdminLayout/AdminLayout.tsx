@@ -1,5 +1,6 @@
 import { Link, routes } from '@redwoodjs/router'
-
+import DropDownMenu from 'src/components/DropDownMenu/DropDownMenu'
+import Navbar from 'src/components/Navbar'
 type AdminLayoutProps = {
   children?: React.ReactNode
 }
@@ -7,8 +8,23 @@ type AdminLayoutProps = {
 const AdminLayout = ({ children }: AdminLayoutProps) => {
   return (
     <>
-      <div className="container">
-        <header>
+      {/* Here we put the navbar component from components/navbar/navbar */}
+      <Navbar />
+      {/* <DropDownMenu
+          items={[
+            { label: 'Add a worker', link: routes.newWorker() },
+            { label: 'Add a Location', link: routes.newLocation() },
+            { label: 'Add a Shift', link: routes.newShift() },
+            { label: 'Add a worksite', link: routes.newWorksite() },
+            {
+              label: 'Add a shift assignment',
+              link: routes.newShiftAssignment(),
+            },
+          ]}
+        /> */}
+      {/* And the children */}
+      <main>{children}</main>
+      {/* <header>
           <h1 className="header">
             <Link to={routes.home()}>Redwood WC App</Link>
           </h1>
@@ -36,9 +52,7 @@ const AdminLayout = ({ children }: AdminLayoutProps) => {
               </li>
             </ul>
           </nav>
-        </header>
-        <main>{children}</main>
-      </div>
+        </header> */}
     </>
   )
 }
