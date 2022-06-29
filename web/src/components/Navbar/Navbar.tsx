@@ -24,7 +24,7 @@ const Navbar = () => {
             <div className=" flex items-center md">
               <Link
                 to={routes.home()}
-                className="text-gray-100  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-xl font-medium "
+                className="text-gray-100    dark:hover:text-white px-3 py-2 rounded-md text-xl font-medium "
               >
                 WC App
               </Link>
@@ -39,37 +39,37 @@ const Navbar = () => {
                 <div className="ml-10 flex items-baseline space-x-4">
                   <Link
                     to={routes.home()}
-                    className="text-gray-100  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                    className="text-gray-100  dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                   >
                     View WallChart
                   </Link>
                   <Link
                     to={routes.newWorker()}
-                    className="text-gray-100  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                    className="text-gray-100  dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                   >
                     Add new Worker
                   </Link>
                   <Link
                     to={routes.newLocation()}
-                    className="text-gray-100  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                    className="text-gray-100    dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                   >
                     Add new Location
                   </Link>
                   <Link
                     to={routes.newShift()}
-                    className="text-gray-100  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                    className="text-gray-100    dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                   >
                     Add new Shift
                   </Link>
                   <Link
                     to={routes.newWorksite()}
-                    className="text-gray-100  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                    className="text-gray-100    dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                   >
                     Add new Worksite
                   </Link>
                   <Link
                     to={routes.newShiftAssignment()}
-                    className="text-gray-100  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                    className="text-gray-100    dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                   >
                     Add new Shift Assignment
                   </Link>
@@ -103,38 +103,38 @@ const Navbar = () => {
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
               <Link
                 to={routes.home()}
-                className="text-gray-100  hover:text-gray-800 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                className="text-gray-100    dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium"
               >
                 View Wallchart
               </Link>
               <Link
                 to={routes.newWorker()}
-                className="text-gray-100  hover:text-gray-800 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                className="text-gray-100    dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium"
               >
                 Add new Worker
               </Link>
               <Link
                 to={routes.newLocation()}
-                className="text-gray-100 hover:text-gray-800 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                className="text-gray-100   dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium"
               >
                 Add new Location
               </Link>
               <Link
                 to={routes.newShift()}
-                className="text-gray-100 hover:text-gray-800 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                className="text-gray-100   dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium"
               >
                 Add new Shift
               </Link>
 
               <Link
                 to={routes.newWorksite()}
-                className="text-gray-100 hover:text-gray-800 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                className="text-gray-100   dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium"
               >
                 Add new Worksite
               </Link>
               <Link
                 to={routes.newShiftAssignment()}
-                className="text-gray-100 hover:text-gray-800 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                className="text-gray-100   dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium"
               >
                 Add new Shift Assignment
               </Link>
