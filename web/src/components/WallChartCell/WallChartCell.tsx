@@ -36,6 +36,11 @@ export const QUERY = gql`
               id
               firstName
               lastName
+              assessments {
+                id
+                date
+                rating
+              }
             }
           }
         }
@@ -75,13 +80,13 @@ const getUniqueShiftNames = (locations: Location[]): string[] =>
     2) flattens the list from string[][] -> string[]
     3) dedups shift names by sticking them into a set
   */
-  [...new Set(
-    locations.map(
-      (location) => location.shifts.map(
-        (shift) => shift.name
-      )
-    ).flat()
-  )]
+  [
+    ...new Set(
+      locations
+        .map((location) => location.shifts.map((shift) => shift.name))
+        .flat()
+    ),
+  ]
 
 const toLocationsProps = (locations: Location[]): PLocation[] =>
   locations.map(toLocationProp)
@@ -92,11 +97,7 @@ const toLocationProp = (location: Location): PLocation => ({
   shifts: toShiftDict(location.shifts),
 })
 
-const toShiftDict = (shifts: Shift[]): {string: PShift} => {
-  const pairs = shifts.map(
-    (shift) => [shift.name, shift]
-  )
+const toShiftDict = (shifts: Shift[]): { string: PShift } => {
+  const pairs = shifts.map((shift) => [shift.name, shift])
   return Object.fromEntries(pairs)
 }
-
-

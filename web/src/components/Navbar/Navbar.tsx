@@ -73,6 +73,12 @@ const Navbar = () => {
                   >
                     Add new Shift Assignment
                   </Link>
+                  <Link
+                    to={routes.newAssessment()}
+                    className="text-gray-100  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                  >
+                    Add new Assessment
+                  </Link>
                 </div>
               </div>
             </div>
@@ -137,6 +143,12 @@ const Navbar = () => {
                 className="text-gray-100 hover:text-gray-800 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium"
               >
                 Add new Shift Assignment
+              </Link>
+              <Link
+                to={routes.newAssessment()}
+                className="text-gray-100 hover:text-gray-800 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+              >
+                Add new Assessment
               </Link>
             </div>
           </div>
