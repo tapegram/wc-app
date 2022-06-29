@@ -1,0 +1,9 @@
+-- CreateTable
+CREATE TABLE "Assessment" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "rating" INTEGER NOT NULL,
+    "workerId" INTEGER NOT NULL,
+    "date" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "notes" TEXT NOT NULL,
+    CONSTRAINT "Assessment_workerId_fkey" FOREIGN KEY ("workerId") REFERENCES "Worker" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
+);
