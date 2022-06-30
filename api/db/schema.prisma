@@ -29,6 +29,7 @@ model Worker {
   jobType          String? //think about making flexible
   employmentStatus String            @default("active") //change to bool, int maybe later
   shifts           ShiftAssignment[]
+  assessments      Assessment[]
 }
 
 model Worksite {
@@ -71,4 +72,22 @@ model Address {
   state      String
   postal     String
   worker     Worker? //future problemo? maybe share address with something else
+}
+
+// enum Rating {
+//   NO_CONTACT
+//   UNION_LEADER
+//   UNION_SUPPORTER
+//   UNDECIDED
+//   ANTI_UNION
+//   ANTI_UNION_LEADER
+// }
+
+model Assessment {
+  id       Int      @id @default(autoincrement())
+  rating   Int
+  workerId Int
+  worker   Worker   @relation(fields: [workerId], references: [id])
+  date     DateTime @default(now())
+  notes    String
 }

@@ -21,6 +21,11 @@ export type Worker = {
   id: number
   firstName: string
   lastName: string
+  assessments: Assessment[]
+}
+export type Assessment = {
+  id: number
+  rating: number
 }
 
 const WallchartComponent = (props: Props) => {

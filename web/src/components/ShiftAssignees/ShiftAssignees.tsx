@@ -5,6 +5,12 @@ type Worker = {
   id: number
   firstName: string
   lastName: string
+  assessments: Assessment[]
+}
+
+export type Assessment = {
+  id: number
+  rating: number
 }
 
 const buildName = (worker: Worker) => {
@@ -19,7 +25,13 @@ const ShiftAssignees = (props: Props) => {
   return (
     <table>
       {props.workers.map((worker) => (
-        <tr>{buildName(worker)}</tr>
+        <tr key={worker.worker.id}>
+          {buildName(worker) +
+            ': ' +
+            (worker.worker.assessments.length != 0
+              ? worker.worker.assessments[0].rating
+              : 0)}
+        </tr>
       ))}
     </table>
   )
