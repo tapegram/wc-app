@@ -22,6 +22,7 @@ const Routes = () => {
   return (
     <Router>
       <Set wrap={AdminLayout}>
+        <Route path="/admin" page={AdminPage} name="admin" />
         <Route path="/" page={HomePage} name="home" />
         <Set wrap={ShiftsLayout}>
           <Route path="/shifts/new" page={ShiftNewShiftPage} name="newShift" />

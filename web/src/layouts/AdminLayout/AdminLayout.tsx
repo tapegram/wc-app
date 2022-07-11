@@ -24,15 +24,9 @@ const AdminLayout = ({ children }: AdminLayoutProps) => {
         /> */}
       {/* And the children */}
       <main>{children}</main>
-      {/* <header>
-          <h1 className="header">
-            <Link to={routes.home()}>Redwood WC App</Link>
-          </h1>
+      <header>
           <nav>
             <ul className="navbar">
-              <li>
-                <Link to={routes.home()}>WallChart</Link>
-              </li>
               <li>
                 <Link to={routes.newWorker()}>Add a Worker</Link>
               </li>
@@ -52,7 +46,7 @@ const AdminLayout = ({ children }: AdminLayoutProps) => {
               </li>
             </ul>
           </nav>
-        </header> */}
+        </header>
     </>
   )
 }
