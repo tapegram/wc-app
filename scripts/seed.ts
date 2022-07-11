@@ -50,10 +50,22 @@ export default async () => {
       // To try this example data with the UserExample model in schema.prisma,
       // uncomment the lines below and run 'yarn rw prisma migrate dev'
       //
-      { firstName: 'alice', lastName: 'johnson' },
-      { firstName: 'mark', lastName: 'example' },
-      { firstName: 'jackie', lastName: 'jackson' },
-      { firstName: 'bob', lastName: 'bobson' },
+      { firstName: 'Jim', lastName: 'Halpert' },
+      { firstName: 'Pam', lastName: 'Beesly' },
+      { firstName: 'Dwight', lastName: 'Schrute' },
+      { firstName: 'Ryan', lastName: 'Howard' },
+      { firstName: 'Oscar', lastName: 'Martinezk' },
+      { firstName: 'Kevin', lastName: 'Malone' },
+      { firstName: 'Angela', lastName: 'Martin' },
+      { firstName: 'Kelly', lastName: 'Kapoor' },
+      { firstName: 'Darryl', lastName: 'Philbin' },
+      { firstName: 'Roy', lastName: 'Anderson' },
+      { firstName: 'Val', lastName: 'Lastname' },
+      { firstName: 'Nate', lastName: 'Nickerson' },
+      { firstName: 'Lonny', lastName: 'Jackson' },
+      { firstName: 'Glenn', lastName: 'Glennderson' },
+      { firstName: 'Matt', lastName: 'TheMan' },
+      { firstName: 'Hidetoshi', lastName: 'Person' },
     ]
     const workers = await Promise.all(
       workerData.map(async (data: Prisma.WorkerCreateArgs['data']) => {
@@ -63,10 +75,50 @@ export default async () => {
       })
     )
 
+    const assessmentData: Prisma.AssessmentCreateArgs['data'][] = [
+      { rating: 2, workerId: workers[0].id, notes: "" },
+      { rating: 1, workerId: workers[0].id, notes: "" },
+      { rating: 2, workerId: workers[1].id, notes: "" },
+      { rating: 5, workerId: workers[2].id, notes: "" },
+      { rating: 4, workerId: workers[3].id, notes: ""},
+      { rating: 1, workerId: workers[4].id, notes: ""},
+      { rating: 3, workerId: workers[5].id, notes: ""},
+      { rating: 5, workerId: workers[6].id, notes: ""},
+      { rating: 4, workerId: workers[7].id, notes: ""},
+      { rating: 1, workerId: workers[8].id, notes: ""},
+      { rating: 5, workerId: workers[9].id, notes: ""},
+      { rating: 2, workerId: workers[10].id, notes: ""},
+      { rating: 4, workerId: workers[11].id, notes: ""},
+      { rating: 2, workerId: workers[12].id, notes: ""},
+      { rating: 3, workerId: workers[13].id, notes: ""},
+      { rating: 5, workerId: workers[14].id, notes: ""},
+      { rating: 3, workerId: workers[15].id, notes: ""},
+    ]
+    const assessments = await Promise.all(
+      assessmentData.map(async (data: Prisma.AssessmentCreateArgs['data']) => {
+        const record = await db.assessment.create({ data })
+        console.log(record)
+        return record
+      })
+    )
+
     const shiftAssignmentData: Prisma.ShiftAssignmentCreateArgs['data'][] = [
-      { workerId: workers[0].id, shiftId: shifts[0].id },
-      { workerId: workers[1].id, shiftId: shifts[1].id },
+      { workerId: workers[0].id, shiftId: shifts[2].id },
+      { workerId: workers[1].id, shiftId: shifts[2].id },
       { workerId: workers[2].id, shiftId: shifts[2].id },
+      { workerId: workers[3].id, shiftId: shifts[2].id },
+      { workerId: workers[4].id, shiftId: shifts[2].id },
+      { workerId: workers[5].id, shiftId: shifts[2].id },
+      { workerId: workers[6].id, shiftId: shifts[2].id },
+      { workerId: workers[7].id, shiftId: shifts[2].id },
+      { workerId: workers[8].id, shiftId: shifts[0].id },
+      { workerId: workers[9].id, shiftId: shifts[0].id },
+      { workerId: workers[10].id, shiftId: shifts[0].id },
+      { workerId: workers[11].id, shiftId: shifts[0].id },
+      { workerId: workers[12].id, shiftId: shifts[0].id },
+      { workerId: workers[13].id, shiftId: shifts[1].id },
+      { workerId: workers[14].id, shiftId: shifts[1].id },
+      { workerId: workers[15].id, shiftId: shifts[1].id },
     ]
     await Promise.all(
       shiftAssignmentData.map(async (data: Prisma.ShiftAssignmentCreateArgs['data']) => {
