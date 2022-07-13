@@ -1,5 +1,5 @@
 import { MetaTags } from '@redwoodjs/web'
-import WallChartCell from 'src/components/WallchartCell'
+import WallChartCell from 'src/components/WallChartCell'
 import Navbar from 'src/components/Navbar'
 const HomePage = () => (
   <>
