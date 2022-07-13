@@ -44,6 +44,11 @@ const AdminLayout = ({ children }: AdminLayoutProps) => {
                   Add a Shift Assignment
                 </Link>
               </li>
+              <li>
+                <Link to={routes.newTag()}>
+                    Add a Tag
+                </Link>
+              </li>
             </ul>
           </nav>
         </header>
