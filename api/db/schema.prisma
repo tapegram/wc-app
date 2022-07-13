@@ -30,6 +30,7 @@ model Worker {
   employmentStatus String            @default("active") //change to bool, int maybe later
   shifts           ShiftAssignment[]
   assessments      Assessment[]
+  tags             Tag[]
 }
 
 model Worksite {
@@ -90,4 +91,22 @@ model Assessment {
   worker   Worker   @relation(fields: [workerId], references: [id])
   date     DateTime @default(now())
   notes    String
+}
+
+// ie,
+// went to an organizing dinner
+// signed a petition
+// said "unions are cool and good"
+
+// follow up question: would anyone want to know when a tag was given?
+
+model Tag {
+  id Int @id @default(autoincrement())
+
+  name  String
+  color String @default("grey")
+  shape String @default("circle")
+
+  date     DateTime @default(now())
+  workers  Worker[]
 }
