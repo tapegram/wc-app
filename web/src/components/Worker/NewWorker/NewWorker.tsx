@@ -12,23 +12,18 @@ const CREATE_WORKER_MUTATION = gql`
 `
 
 const NewWorker = () => {
-  const [createWorker, { loading, error }] = useMutation(
-    CREATE_WORKER_MUTATION,
-    {
-      onCompleted: () => {
-        toast.success('Worker created')
-        navigate(routes.workers())
-      },
-      onError: (error) => {
-        toast.error(error.message)
-      },
-    }
-  )
+  const [createWorker, { loading, error }] = useMutation(CREATE_WORKER_MUTATION, {
+    onCompleted: () => {
+      toast.success('Worker created')
+      navigate(routes.workers())
+    },
+    onError: (error) => {
+      toast.error(error.message)
+    },
+  })
 
   const onSave = (input) => {
-    const castInput = Object.assign(input, {
-      addressId: parseInt(input.addressId),
-    })
+    const castInput = Object.assign(input, { addressId: parseInt(input.addressId), })
     createWorker({ variables: { input: castInput } })
   }
 

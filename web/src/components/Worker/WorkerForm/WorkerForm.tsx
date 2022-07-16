@@ -8,8 +8,33 @@ import {
   Submit,
 } from '@redwoodjs/forms'
 
+
+
 const WorkerForm = (props) => {
   const onSubmit = (data) => {
+
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
     props.onSave(data, props?.worker?.id)
   }
 
@@ -22,7 +47,7 @@ const WorkerForm = (props) => {
           titleClassName="rw-form-error-title"
           listClassName="rw-form-error-list"
         />
-
+      
         <Label
           name="firstName"
           className="rw-label"
@@ -30,14 +55,15 @@ const WorkerForm = (props) => {
         >
           First name
         </Label>
-
-        <TextField
-          name="firstName"
-          defaultValue={props.worker?.firstName}
-          className="rw-input"
-          errorClassName="rw-input rw-input-error"
-          validation={{ required: true }}
-        />
+        
+          <TextField
+            name="firstName"
+            defaultValue={props.worker?.firstName}
+            className="rw-input"
+            errorClassName="rw-input rw-input-error"
+            validation={{ required: true }}
+          />
+        
 
         <FieldError name="firstName" className="rw-field-error" />
 
@@ -48,14 +74,15 @@ const WorkerForm = (props) => {
         >
           Last name
         </Label>
-
-        <TextField
-          name="lastName"
-          defaultValue={props.worker?.lastName}
-          className="rw-input"
-          errorClassName="rw-input rw-input-error"
-          validation={{ required: true }}
-        />
+        
+          <TextField
+            name="lastName"
+            defaultValue={props.worker?.lastName}
+            className="rw-input"
+            errorClassName="rw-input rw-input-error"
+            validation={{ required: true }}
+          />
+        
 
         <FieldError name="lastName" className="rw-field-error" />
 
@@ -66,13 +93,14 @@ const WorkerForm = (props) => {
         >
           Phone
         </Label>
-
-        <TextField
-          name="phone"
-          defaultValue={props.worker?.phone}
-          className="rw-input"
-          errorClassName="rw-input rw-input-error"
-        />
+        
+          <TextField
+            name="phone"
+            defaultValue={props.worker?.phone}
+            className="rw-input"
+            errorClassName="rw-input rw-input-error"
+          />
+        
 
         <FieldError name="phone" className="rw-field-error" />
 
@@ -83,13 +111,14 @@ const WorkerForm = (props) => {
         >
           Email
         </Label>
-
-        <TextField
-          name="email"
-          defaultValue={props.worker?.email}
-          className="rw-input"
-          errorClassName="rw-input rw-input-error"
-        />
+        
+          <TextField
+            name="email"
+            defaultValue={props.worker?.email}
+            className="rw-input"
+            errorClassName="rw-input rw-input-error"
+          />
+        
 
         <FieldError name="email" className="rw-field-error" />
 
@@ -100,13 +129,14 @@ const WorkerForm = (props) => {
         >
           Address id
         </Label>
-
-        <NumberField
-          name="addressId"
-          defaultValue={props.worker?.addressId}
-          className="rw-input"
-          errorClassName="rw-input rw-input-error"
-        />
+        
+          <NumberField
+            name="addressId"
+            defaultValue={props.worker?.addressId}
+            className="rw-input"
+            errorClassName="rw-input rw-input-error"
+          />
+        
 
         <FieldError name="addressId" className="rw-field-error" />
 
@@ -117,13 +147,14 @@ const WorkerForm = (props) => {
         >
           Job type
         </Label>
-
-        <TextField
-          name="jobType"
-          defaultValue={props.worker?.jobType}
-          className="rw-input"
-          errorClassName="rw-input rw-input-error"
-        />
+        
+          <TextField
+            name="jobType"
+            defaultValue={props.worker?.jobType}
+            className="rw-input"
+            errorClassName="rw-input rw-input-error"
+          />
+        
 
         <FieldError name="jobType" className="rw-field-error" />
 
@@ -134,19 +165,23 @@ const WorkerForm = (props) => {
         >
           Employment status
         </Label>
-
-        <TextField
-          name="employmentStatus"
-          defaultValue={props.worker?.employmentStatus}
-          className="rw-input"
-          errorClassName="rw-input rw-input-error"
-          validation={{ required: true }}
-        />
+        
+          <TextField
+            name="employmentStatus"
+            defaultValue={props.worker?.employmentStatus}
+            className="rw-input"
+            errorClassName="rw-input rw-input-error"
+            validation={{ required: true }}
+          />
+        
 
         <FieldError name="employmentStatus" className="rw-field-error" />
 
         <div className="rw-button-group">
-          <Submit disabled={props.loading} className="rw-button rw-button-blue">
+          <Submit
+            disabled={props.loading}
+            className="rw-button rw-button-blue"
+          >
             Save
           </Submit>
         </div>

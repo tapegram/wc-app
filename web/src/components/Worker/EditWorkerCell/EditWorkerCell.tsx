@@ -43,40 +43,28 @@ export const Failure = ({ error }: CellFailureProps) => (
 )
 
 export const Success = ({ worker }: CellSuccessProps<EditWorkerById>) => {
-  const [updateWorker, { loading, error }] = useMutation(
-    UPDATE_WORKER_MUTATION,
-    {
-      onCompleted: () => {
-        toast.success('Worker updated')
-        navigate(routes.workers())
-      },
-      onError: (error) => {
-        toast.error(error.message)
-      },
-    }
-  )
+  const [updateWorker, { loading, error }] = useMutation(UPDATE_WORKER_MUTATION, {
+    onCompleted: () => {
+      toast.success('Worker updated')
+      navigate(routes.workers())
+    },
+    onError: (error) => {
+      toast.error(error.message)
+    },
+  })
 
   const onSave = (input, id) => {
-    const castInput = Object.assign(input, {
-      addressId: parseInt(input.addressId),
-    })
+    const castInput = Object.assign(input, { addressId: parseInt(input.addressId), })
     updateWorker({ variables: { id, input: castInput } })
   }
 
   return (
     <div className="rw-segment">
       <header className="rw-segment-header">
-        <h2 className="rw-heading rw-heading-secondary">
-          Edit Worker {worker.id}
-        </h2>
+        <h2 className="rw-heading rw-heading-secondary">Edit Worker {worker.id}</h2>
       </header>
       <div className="rw-segment-main">
-        <WorkerForm
-          worker={worker}
-          onSave={onSave}
-          error={error}
-          loading={loading}
-        />
+        <WorkerForm worker={worker} onSave={onSave} error={error} loading={loading} />
       </div>
     </div>
   )

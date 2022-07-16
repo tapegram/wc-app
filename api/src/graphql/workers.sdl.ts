@@ -11,6 +11,7 @@ export const schema = gql`
     employmentStatus: String!
     shifts: [ShiftAssignment]!
     assessments: [Assessment]!
+    tags: [Tag]!
   }
 
   type Query {
