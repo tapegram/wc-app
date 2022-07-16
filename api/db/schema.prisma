@@ -30,7 +30,7 @@ model Worker {
   employmentStatus String            @default("active") //change to bool, int maybe later
   shifts           ShiftAssignment[]
   assessments      Assessment[]
-  tags             Tag[]
+  tags             TagLink[]
 }
 
 model Worksite {
@@ -93,6 +93,19 @@ model Assessment {
   notes    String
 }
 
+model TagLink {
+  id       Int      @id @default(autoincrement())
+
+  workerId Int
+  worker   Worker   @relation(fields: [workerId], references: [id])
+  tagId    Int
+  tag      Tag @relation(fields: [tagId], references: [id])
+
+  date     DateTime @default(now())
+
+  @@unique([workerId, tagId])
+}
+
 // ie,
 // went to an organizing dinner
 // signed a petition
@@ -101,12 +114,13 @@ model Assessment {
 // follow up question: would anyone want to know when a tag was given?
 
 model Tag {
-  id Int @id @default(autoincrement())
+  id       Int @id @default(autoincrement())
 
-  name  String
-  color String @default("grey")
-  shape String @default("circle")
+  name     String
+  color    String @default("grey")
+  shape    String @default("circle")
 
   date     DateTime @default(now())
-  workers  Worker[]
+
+  workers  TagLink[]
 }
