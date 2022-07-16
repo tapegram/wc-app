@@ -102,6 +102,49 @@ export default async () => {
       })
     )
 
+    // create tags
+    const tagData: Prisma.TagCreateArgs['data'][] = [
+      { name: "gave a thumbs up", color: "green" },
+      { name: "baked a union cake", color: "blue" },
+    ]
+
+    const tags = await Promise.all(
+      tagData.map(async (data: Prisma.TagCreateArgs['data']) => {
+        const record = await db.tag.create({ data })
+        console.log(record)
+        return record
+      })
+    )
+
+    // works and tags we want to add to them
+    const workersToTag = [
+      { worker: workers[0], tags: [tags[0]] },
+      { worker: workers[1], tags: [tags[1]] },
+      { worker: workers[2], tags: [tags[0]] },
+      { worker: workers[3], tags: [tags[1]] },
+      { worker: workers[4], tags: [tags[0], tags[1]] },
+      { worker: workers[5], tags: [tags[1], tags[0]] },
+    ]
+
+    // connect tags and workers
+    const workerTagLinks = await Promise.all(
+
+      workersToTag.map(async ({ worker, tags }) => {
+
+        return tags.map(async tag => {
+          const record = await db.tagLink.create({
+            data: {
+              workerId: worker.id,
+              tagId: tag.id,
+            }
+          })
+          console.log(record)
+          return record
+        })
+
+      })
+    )
+
     const shiftAssignmentData: Prisma.ShiftAssignmentCreateArgs['data'][] = [
       { workerId: workers[0].id, shiftId: shifts[2].id },
       { workerId: workers[1].id, shiftId: shifts[2].id },
