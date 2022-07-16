@@ -49,6 +49,11 @@ const AdminLayout = ({ children }: AdminLayoutProps) => {
                     Add a Tag
                 </Link>
               </li>
+              <li>
+                <Link to={routes.newTagLink()}>
+                    Add a Tag Link
+                </Link>
+              </li>
             </ul>
           </nav>
         </header>
