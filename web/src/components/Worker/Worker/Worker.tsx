@@ -66,41 +66,32 @@ const Worker = ({ worker }) => {
     <>
       <div className="rw-segment">
         <header className="rw-segment-header">
-          <h2 className="rw-heading rw-heading-secondary">
-            Worker {worker.id} Detail
-          </h2>
+          <h2 className="rw-heading rw-heading-secondary">Worker {worker.id} Detail</h2>
         </header>
         <table className="rw-table">
           <tbody>
             <tr>
               <th>Id</th>
               <td>{worker.id}</td>
-            </tr>
-            <tr>
+            </tr><tr>
               <th>First name</th>
               <td>{worker.firstName}</td>
-            </tr>
-            <tr>
+            </tr><tr>
               <th>Last name</th>
               <td>{worker.lastName}</td>
-            </tr>
-            <tr>
+            </tr><tr>
               <th>Phone</th>
               <td>{worker.phone}</td>
-            </tr>
-            <tr>
+            </tr><tr>
               <th>Email</th>
               <td>{worker.email}</td>
-            </tr>
-            <tr>
+            </tr><tr>
               <th>Address id</th>
               <td>{worker.addressId}</td>
-            </tr>
-            <tr>
+            </tr><tr>
               <th>Job type</th>
               <td>{worker.jobType}</td>
-            </tr>
-            <tr>
+            </tr><tr>
               <th>Employment status</th>
               <td>{worker.employmentStatus}</td>
             </tr>

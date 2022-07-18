@@ -44,4 +44,6 @@ export const Worker: WorkerResolvers = {
     db.worker.findUnique({ where: { id: root.id } }).shifts(),
   assessments: (_obj, { root }) =>
     db.worker.findUnique({ where: { id: root.id } }).assessments(),
+  tags: (_obj, { root }) =>
+    db.worker.findUnique({ where: { id: root.id } }).tags(),
 }

@@ -38,6 +38,13 @@ const Navbar = () => {
               <div className="hidden md:block">
                 <div className="ml-10 flex items-baseline space-x-4">
                   <Link
+                    to={routes.admin()}
+                    className="text-gray-100  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                  >
+                    Admin
+                  </Link>
+                  {/*
+                  <Link
                     to={routes.home()}
                     className="text-gray-100  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                   >
@@ -79,6 +86,7 @@ const Navbar = () => {
                   >
                     Add new Assessment
                   </Link>
+                  */}
                 </div>
               </div>
             </div>
